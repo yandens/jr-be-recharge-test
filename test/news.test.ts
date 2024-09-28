@@ -255,3 +255,22 @@ describe("DELETE /api/news/:id", () => {
     expect(response.body.data).toBe("OK");
   });
 });
+
+describe("GET /api/news/search", () => {
+  beforeEach(async () => {
+    await TestUtil.createCategory();
+    await TestUtil.createNews();
+  });
+
+  afterEach(async () => {
+    await TestUtil.deleteNews();
+    await TestUtil.deleteCategory();
+  });
+
+  it("should search news", async () => {
+    const response = await supertest(app).get("/api/news/search?query=tes");
+
+    expect(response.status).toBe(200);
+    expect(response.body.data).toBeDefined();
+  });
+});
