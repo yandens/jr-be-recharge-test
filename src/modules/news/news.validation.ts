@@ -10,7 +10,7 @@ export class NewsValidation {
   });
 
   static readonly SEARCH: ZodType<NewsSearchDto> = z.object({
-    query: z.string().min(3).max(255),
+    query: z.string(),
     page: z.number().int(),
     size: z.number().int(),
   });
