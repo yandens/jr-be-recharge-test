@@ -93,6 +93,7 @@ npm test
 
 - `GET /api/news`: Get all news
 - `GET /api/news/:id`: Get a news by ID 
+- `GET /api/news/search`: Search news
 - `POST /api/news`: Create a news - `Requires authentication`
 - `PUT /api/news/:id`: Update a news by ID - `Requires authentication`
 - `DELETE /api/news/:id`: Delete a news by ID - `Requires authentication`
